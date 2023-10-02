@@ -1,31 +1,31 @@
-//package com.berke.controller;
-//
-//import com.berke.enums.EBrans;
-//import com.berke.repository.entity.Ogretmen;
-//import com.berke.utility.HibernateUtility;
-//import org.hibernate.Session;
-//import org.hibernate.Transaction;
-//
-//import javax.lang.model.element.Name;
-//import java.time.LocalDate;
-//
-//public class OgretmenController {
-//    public static void main(String[] args) {
-//        Session session;
-//        Transaction transaction;
-//
-//        Ogretmen ogretmen = Ogretmen.builder()
-//                .ad("Berke")
-//                .soyad("Yildirimer")
-//                .tcKimlik("12345678986")
-//                .eBrans(EBrans.FIZIK)
-//                .date(LocalDate.now())
-//                .build();
-//
-//        session= HibernateUtility.getSessionFactory().openSession();
-//        transaction= session.beginTransaction();
-//        session.save(ogretmen);
-//        transaction.commit();
-//        session.close();
-//    }
-//}
+package com.berke.controller;
+
+import com.berke.repository.entity.Ogretmen;
+import com.berke.service.OgretmenService;
+
+import java.util.List;
+import java.util.Optional;
+
+public class OgretmenController {
+    OgretmenService ogretmenService;
+
+    public OgretmenController (){
+        this.ogretmenService = new OgretmenService();
+    }
+
+    public Ogretmen save(Ogretmen ogretmen){
+        return ogretmenService.save(ogretmen);
+    }
+
+    public void update(Ogretmen ogretmen){
+        ogretmenService.update(ogretmen);
+    }
+
+    public List<Ogretmen> findAll(){
+        return ogretmenService.findAll();
+    }
+
+    public Optional<Ogretmen> findById(Long id){
+        return ogretmenService.findById(id);
+    }
+}

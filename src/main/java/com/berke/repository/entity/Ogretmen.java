@@ -11,22 +11,20 @@ import java.time.LocalDate;
 
 @Data
 @Builder
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
+@Table(name = "tbl_ogretmen")
 @Entity
-@Table(name = "ogretmentbl")
 public class Ogretmen {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
-
+    private Long id;
     @Embedded
-    KisiselBilgiler kisiselBilgiler;
-
+    private KisiselBilgiler kisiselBilgiler;
     @Enumerated(EnumType.STRING)
-    EBrans eBrans;
-
+    private EBrans brans;
     @Builder.Default
     @Column(nullable = false)
-    LocalDate date=LocalDate.now();
+    private LocalDate iseBaslamaTarihi = LocalDate.now();
 }

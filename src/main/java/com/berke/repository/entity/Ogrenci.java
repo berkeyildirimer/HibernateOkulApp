@@ -10,20 +10,19 @@ import java.time.LocalDate;
 
 @Data
 @Builder
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
+@Table(name = "tbl_ogrenci")
 @Entity
-@Table(name = "ogrencitbl")
 public class Ogrenci {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    private Long id;
 
     @Embedded
-    KisiselBilgiler kisiselBilgiler;
+    private KisiselBilgiler kisiselBilgiler;
 
     @Builder.Default
-    @Column(nullable = false)
-    LocalDate dogumTarihi=LocalDate.now();
-
+    private LocalDate dogumTarihi = LocalDate.now();
 }

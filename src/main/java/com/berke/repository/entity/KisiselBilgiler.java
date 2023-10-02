@@ -10,16 +10,15 @@ import javax.persistence.Embeddable;
 
 @Data
 @Builder
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Embeddable
 public class KisiselBilgiler {
+
     @Column(nullable = false, length = 30)
-    String ad;
-
-    @Column(nullable = false,length = 30)
-    String soyad;
-
-    @Column(unique = true,nullable = false,length = 11)
-    String tcKimlik;
+    private String isim;
+    @Column(nullable = false, length = 30)
+    private String soyisim;
+    @Column(nullable = false, unique = true, length = 11)
+    private String tcKimlikNo; //Banu ve Berhan onayli...
 }

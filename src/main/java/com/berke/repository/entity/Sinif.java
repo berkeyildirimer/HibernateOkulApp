@@ -10,18 +10,21 @@ import java.util.List;
 
 @Data
 @Builder
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
+@Table(name = "tbl_sinif")
 @Entity
-@Table(name = "siniftbl")
 public class Sinif {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    private Long id;
 
-    String sinifAdi;
-    Long ogretmenId;
+    private String sinifAdi;
 
+    private Long ogretmenId;
     @ElementCollection
-    List<String>ogrenciler;
+    List<String> ogrenciler;
+
+
 }
