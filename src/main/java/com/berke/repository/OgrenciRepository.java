@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 
-public class OgrenciRepository extends MyFactoryRepository<Ogrenci> {
+public class OgrenciRepository extends MyFactoryRepository<Ogrenci, Long> {
     EntityManager entityManager = HibernateUtility.getSessionFactory().createEntityManager();
     CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
 

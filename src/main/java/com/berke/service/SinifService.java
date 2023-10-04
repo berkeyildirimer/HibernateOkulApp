@@ -9,14 +9,11 @@ import java.util.Optional;
 public class SinifService {
     SinifRepository sinifRepository;
 
-    public SinifService(){
-        this.sinifRepository=new SinifRepository();
+    public SinifService() {
+        this.sinifRepository = new SinifRepository();
     }
     public Sinif save(Sinif sinif){
         return sinifRepository.save(sinif);
-    }
-    public void update(Sinif sinif){
-        sinifRepository.update(sinif);
     }
     public List<Sinif> findAll(){
         return sinifRepository.findAll();

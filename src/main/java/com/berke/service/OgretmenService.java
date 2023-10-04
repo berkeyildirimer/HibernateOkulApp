@@ -9,14 +9,13 @@ import java.util.Optional;
 public class OgretmenService {
     OgretmenRepository ogretmenRepository;
 
-    public OgretmenService(){
-        this.ogretmenRepository=new OgretmenRepository();
+    public OgretmenService() {
+        this.ogretmenRepository = new OgretmenRepository();
+
     }
     public Ogretmen save(Ogretmen ogretmen){
+
         return ogretmenRepository.save(ogretmen);
-    }
-    public void update(Ogretmen ogretmen){
-        ogretmenRepository.update(ogretmen);
     }
     public List<Ogretmen> findAll(){
         return ogretmenRepository.findAll();

@@ -3,10 +3,16 @@ package com.berke.utility;
 import java.util.List;
 import java.util.Optional;
 
-public interface ICrud <T>{
+public interface ICrud <T,ID>{
+    T save (T entity);
+    Iterable<T> saveAll(Iterable<T> entities);
+    void delete(T entity);
+    void deleteById(ID id);
 
-    T save(T entity);
-    void update(T entity);
+    Optional<T> findById(ID id);
+    boolean existById(ID id);
     List<T> findAll();
-    Optional<T> findById(Long id);
+    List<T> findByEntity(T entity);
+    List<T> findByColumnNameAndValue(String columnName,String value);
+
 }
