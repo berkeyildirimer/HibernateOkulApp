@@ -17,9 +17,9 @@ public class OgrenciController {
         return ogrenciService.save(ogrenci);
     }
 
-    public void update(Ogrenci ogrenci){
-        ogrenciService.update(ogrenci);
-    }
+//    public void update(Ogrenci ogrenci){
+//        ogrenciService.update(ogrenci);
+//    }
 
     public List<Ogrenci> findAll(){
         return ogrenciService.findAll();

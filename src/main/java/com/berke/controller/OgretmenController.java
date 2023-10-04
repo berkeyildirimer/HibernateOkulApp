@@ -17,9 +17,9 @@ public class OgretmenController {
         return ogretmenService.save(ogretmen);
     }
 
-    public void update(Ogretmen ogretmen){
-        ogretmenService.update(ogretmen);
-    }
+//    public void update(Ogretmen ogretmen){
+//        ogretmenService.update(ogretmen);
+//    }
 
     public List<Ogretmen> findAll(){
         return ogretmenService.findAll();

@@ -18,9 +18,9 @@ public class SinifController {
         return sinifService.save(sinif);
     }
 
-    public void update(Sinif sinif){
-        sinifService.update(sinif);
-    }
+//    public void update(Sinif sinif){
+//        sinifService.update(sinif);
+//    }
 
     public List<Sinif> findAll(){
         return sinifService.findAll();
